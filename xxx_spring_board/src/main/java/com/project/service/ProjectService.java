@@ -5,4 +5,6 @@ import com.project.vo.ProjectVO;
 
 public interface ProjectService {
 	List<ProjectVO> selectProjectList() throws Exception;
+
+	void insertProject(ProjectVO projectVO);
 }

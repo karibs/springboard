@@ -19,5 +19,10 @@ public class ProjectServiceImpl implements ProjectService {
 	@Transactional
 	public List<ProjectVO> selectProjectList() throws Exception {
 		return projectMapper.selectProjectList();
-	}	
+	}
+	
+	@Override
+	public void insertProject(ProjectVO projectVO) {
+		projectMapper.insertProject(projectVO);
+	}
 }
