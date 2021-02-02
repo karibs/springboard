@@ -97,4 +97,12 @@ public class HomeController {
 		
 		return "redirect:/projectList.do";
 	}
+	
+	/*±€ ªË¡¶*/
+	@RequestMapping(value="/projectDelete.do")
+	public String ProjectDelete(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) throws Exception {
+		projectService.deleteProject(projectVO);
+		
+		return "redirect:/projectList.do";
+	}
 }

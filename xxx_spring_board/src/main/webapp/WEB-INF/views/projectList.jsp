@@ -28,6 +28,7 @@
     <td>${item.proBody}</td>
     <td>${item.proDate}</td>
     <td><a href = "${path}/projectUpdateForm.do?proId=${item.proId}">수정</a></td>
+    <td><a href = "${path}/projectDelete.do?proId=${item.proId}">삭제</a></td>
   </tr>
 </c:forEach>
 </tbody>
