@@ -60,13 +60,9 @@ public class HomeController {
 	
 	/*
 	 * 게시판 등록폼
-	 * 
 	 * @param projectVO
-	 * 
-	 * @param model
-	 * 
+	 * @param model 
 	 * @return
-	 * 
 	 * @throws Exception
 	 */
 	
@@ -79,6 +75,25 @@ public class HomeController {
 	@RequestMapping(value="/projectInsert.do")
 	public String Insert(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) {
 		projectService.insertProject(projectVO);
+		
+		return "redirect:/projectList.do";
+	}
+	
+	/* 게시판 수정 폼
+	 * @param projectVO
+	 * @param model
+	 * @return
+	 * @throws Exception */
+	@RequestMapping(value="/projectUpdateForm.do")
+	public String projectUpdateForm(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) throws Exception {
+		return "projectUpdateForm";
+	}
+	
+	/* 글 수정 */
+	@RequestMapping(value="/projectUpdate.do")
+	public String projectUpdate(@ModelAttribute("projectVO") ProjectVO projectVO, Model model) throws Exception {
+		System.out.println(projectVO);
+		projectService.updateProject(projectVO);
 		
 		return "redirect:/projectList.do";
 	}

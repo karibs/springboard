@@ -7,5 +7,9 @@ public interface ProjectDAO {
 	List<ProjectVO> selectProjectList() throws Exception;
 	
 	void insertProject(ProjectVO projectVO);
+	
+	void updateProject(ProjectVO projectVO);
+	
+	void deleteProject(ProjectVO projectVO);
 
 }

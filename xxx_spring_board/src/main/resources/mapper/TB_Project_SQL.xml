@@ -27,4 +27,17 @@
  					SYSDATE)
  </insert>
  
+ <update id="updateProject">
+ 	update TB_PROJECT SET pro_title = #{proTitle}, 
+ 						  pro_body = #{proBody} 
+ 						  WHERE pro_id = #{proId}
+ </update>
+ 
+ <delete id="deleteProject">
+ 	delete 
+ 	from TB_PROJECT
+ 	where
+ 	pro_id = ${proId} 
+ </delete>
+ 
 </mapper>
